@@ -2,16 +2,25 @@
  * @Author: 
  * @Date: 2022-03-19 16:01:44
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2023-02-26 21:01:41
+ * @LastEditTime: 2023-03-01 15:27:59
  * @Description: 请填写简介
 -->
 # MyOJ_judger
 
+
 评测机部分，基于 `cpp` 开发。
 目前只支持评测 `c/cpp`
-于容器位置 `/root/projects`
-[前端]()
-[后端]()
+项目于容器位置 `/root/projects`
+[前端](https://github.com/404notfoundl/MyOJ_web)
+[后端](https://github.com/404notfoundl/MyOJ_server)
+
+## 项目结构
+```shell
+.
+|-- dispatcher # 消费消息并返回评测结果
+|-- judger # 评测部分
+|-- limiter # 修改cgroup部分
+```
 
 ## 部署
   * 参照 `server` 部分
@@ -37,13 +46,14 @@
 于项目根目录
 ```shell
 make clean # 清除已有文件
-make # 默认开启O2 或：
+make # 默认开启O2 
+# 或：
 make OPT=-g # 附加调试信息
 ```
 ## 启动
   ```shell
   cd dispatcher
-  sh start_judgerd.sh &
+  sh start_judgerd.sh & 
   ```
 
 ## 相关配置
