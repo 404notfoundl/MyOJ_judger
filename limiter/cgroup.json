@@ -1,0 +1,25 @@
+﻿{
+  "cgroups": {
+    "@annotation": "'@'开头做注释用，不读入",
+    "@group_name": "组名称",
+    "defaultcgroup": {
+      "@subsys_name": "子系统名称 /sys/fs/cgroup",
+      "memory": {
+        "@param": "各项参数",
+        "memory.limit_in_bytes": 134217728,
+        "memory.swappiness": 0
+      }
+    },
+    "compilecgroup": {
+      "@annotation": "编译时期限制，编译所需的内存较大，不限制",
+      "devices": {
+        "devices.deny": "c 1:8 rwm \n c 1:9 rwm"
+      },
+      "memory": {
+        "@param": "各项参数",
+        "memory.limit_in_bytes": 536870912,
+        "memory.swappiness": 0
+      }
+    }
+  }
+}
